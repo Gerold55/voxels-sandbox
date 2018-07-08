@@ -17,6 +17,7 @@ set(src
     ${src_root}/q3renderer.cc
     ${src_root}/q3window.cc
     ${src_root}/q3texture.cc
+    ${src_root}/q3world.cc
 
     ${libs_root}/lodepng.cc
 )
@@ -30,6 +31,7 @@ set(headers
     ${headers_root}/q3window.hpp
     ${headers_root}/q3shared_constants.hpp
     ${headers_root}/q3texture.hpp
+    ${headers_root}/q3world.hpp
 
     ${libs_root}/lodepng/lodepng.h
 )
@@ -45,6 +47,13 @@ set(libdeps ${CMAKE_CURRENT_LIST_DIR}/../qub3d-libdeps)
 
 include_directories(${libdeps}/glm)
 include_directories(${libdeps}/SDL2/include)
+
+add_custom_command(TARGET ${project_name} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E
+        copy_directory
+            "${CMAKE_CURRENT_SOURCE_DIR}/assets/"
+            "${CMAKE_CURRENT_BINARY_DIR}/assets/"
+)
 
 if(UNIX)
     target_link_libraries(${project_name} 
