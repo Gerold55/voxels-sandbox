@@ -1,7 +1,7 @@
 #include <qub3d/q3world.hpp>
-
-#include <qub3d/q3perlin.hpp>
+#include <qub3d/q3generator.hpp>
 #include <iostream>
+
 void Q3World::generate()
 {
     memset(m_blocks, 0, Q3_MAPSIZE * Q3_MAPSIZE);
