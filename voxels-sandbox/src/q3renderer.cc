@@ -11,6 +11,7 @@ Q3Texture *s_grass_texture;
 Q3Texture *s_dirt_and_grass_texture;
 Q3Texture *s_crosshair_texture;
 Q3Texture *s_dirt_texture;
+Q3Texture *s_stone_texture;
 Q3Spritesheet *s_blocks;
 
 Q3Renderer::Q3Renderer()
